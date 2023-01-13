@@ -1,6 +1,34 @@
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import weatherService from "./weatherService";
 
+const initialState = {
+  weather: null,
+};
 
+export const getWeatherByCoordinates = createAsyncThunk(
+  "weather/getWeatherByCoordinates",
+  async (lat, lon) => {
+    try {
+      return await weatherService.getWeatherByCoordinates(lat, lon);
+    } catch (error) {
+      console.error;
+    }
+  }
+);
 
-export const getWeather = createAsyncThunk("weather/getWeather", async(city,country)=>{
-    const response = await axios.get("https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=a6df6f401c9554abaf1170a36abaf462")
-})
+export const weatherSlice = createSlice({
+  name: "weather",
+  initialState,
+  reducers: {
+    reset: (state) => {
+      state.weather = null;
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getWeatherByCoordinates.fulfilled, (state, action) => {
+      state.weather = action.payload;
+    });
+  },
+});
+
+export default weatherSlice.reducer;
