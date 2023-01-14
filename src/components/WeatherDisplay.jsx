@@ -14,6 +14,7 @@ const WeatherDisplay = () => {
   }
 
   if (status === "succeeded" && weather) {
+    
     return (
       <div>
         <p>Temperature: {weather.main.temp}</p>
