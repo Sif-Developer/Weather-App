@@ -1,33 +1,37 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import weatherService from "./weatherService";
 
 const initialState = {
-  weather: null,
+  weather: {},
+  error: null,
+  status: "idle",
 };
 
-export const getWeatherByCoordinates = createAsyncThunk(
-  "weather/getWeatherByCoordinates",
-  async (lat, lon) => {
-    try {
-      return await weatherService.getWeatherByCoordinates(lat, lon);
-    } catch (error) {
-      console.error;
-    }
+export const getWeather = createAsyncThunk("weather/getWeather", async (city) => {
+  try {
+    return await weatherService.getWeather(city);
+  } catch (error) {
+    return error;
   }
-);
+});
 
 export const weatherSlice = createSlice({
   name: "weather",
   initialState,
-  reducers: {
-    reset: (state) => {
-      state.weather = null;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getWeatherByCoordinates.fulfilled, (state, action) => {
-      state.weather = action.payload;
-    });
+    builder
+      .addCase(getWeather.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(getWeather.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.weather = action.payload;
+      })
+      .addCase(getWeather.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      });
   },
 });
 

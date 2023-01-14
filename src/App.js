@@ -1,12 +1,17 @@
-
+import React from "react";
+import { Provider } from "react-redux";
+import WeatherDisplay from "./components/WeatherDisplay";
+import WeatherForm from "./components/WeatherHome/WeatherForm";
+import {store} from "./app/store"
 
 function App() {
-  // const url = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=a6df6f401c9554abaf1170a36abaf462"
-
   return (
-    <div className="app">
-      <h1>Weather App</h1>
+      <Provider store={store}>
+    <div className="App">
+      <WeatherForm />
+      <WeatherDisplay />
     </div>
+    </Provider>
   );
 }
 
