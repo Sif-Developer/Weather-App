@@ -2,34 +2,34 @@ import { useSelector } from "react-redux";
 import WeatherIcon from "./WeatherIcon/WeatherIcon";
 
 const WeatherDisplay = () => {
-    const weather = useSelector((state) => state.weather.weather);
-    const status = useSelector((state) => state.weather.status);
-    const error = useSelector((state) => state.weather.error);
+  const weather = useSelector((state) => state.weather.weather);
+  const status = useSelector((state) => state.weather.status);
+  const error = useSelector((state) => state.weather.error);
+  const date = new Date();
 
-    if (status === "loading") {
-        return <p>Loading...</p>;
-    }
-
-    if (status === "failed") {
-        return <p>Error: {error}</p>;
-    }
-
-    if (status === "succeeded" && weather?.main) {
-      return (
-          <div>
-              <WeatherIcon weather={weather} />
-              <p>Temperature: {weather.main?.temp}</p>
-              <p>Pressure: {weather.main?.pressure}</p>
-              <p>Humidity: {weather.main?.humidity}</p>
-              <p>Min temperature: {weather.main?.temp_min}</p>
-              <p>Max temperature: {weather.main?.temp_max}</p>
-          </div>
-      );
+  if (status === "loading") {
+    return <p>Loading...</p>;
   }
 
-    return null;
+  if (status === "failed" && !error.payload) {
+    return <p>City not found</p>;
+  }
+
+  if (status === "succeeded" && weather?.main) {
+    return (
+      <div>
+        <WeatherIcon weather={weather} />
+        <p>Temperature: {weather.main?.temp}</p>
+        <p>Pressure: {weather.main?.pressure}</p>
+        <p>Humidity: {weather.main?.humidity}</p>
+        <p>Min temperature: {weather.main?.temp_min}</p>
+        <p>Max temperature: {weather.main?.temp_max}</p>
+        <p>Current date: {date.toLocaleDateString()}</p>
+      </div>
+    );
+  }
+
+  return null;
 };
-
-
 
 export default WeatherDisplay;
