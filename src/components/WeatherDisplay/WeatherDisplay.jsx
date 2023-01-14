@@ -14,18 +14,18 @@ const WeatherDisplay = () => {
         return <p>Error: {error}</p>;
     }
 
-    if (status === "succeeded" && weather) {
-        return (
-            <div>
-                <WeatherIcon weather={weather} />
-                <p>Temperature: {weather.main.temp}</p>
-                <p>Pressure: {weather.main.pressure}</p>
-                <p>Humidity: {weather.main.humidity}</p>
-                <p>Min temperature: {weather.main.temp_min}</p>
-                <p>Max temperature: {weather.main.temp_max}</p>
-            </div>
-        );
-    }
+    if (status === "succeeded" && weather?.main) {
+      return (
+          <div>
+              <WeatherIcon weather={weather} />
+              <p>Temperature: {weather.main?.temp}</p>
+              <p>Pressure: {weather.main?.pressure}</p>
+              <p>Humidity: {weather.main?.humidity}</p>
+              <p>Min temperature: {weather.main?.temp_min}</p>
+              <p>Max temperature: {weather.main?.temp_max}</p>
+          </div>
+      );
+  }
 
     return null;
 };

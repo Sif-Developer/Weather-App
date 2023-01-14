@@ -32,8 +32,10 @@ export const weatherSlice = createSlice({
       })
       .addCase(getWeather.rejected, (state, action) => {
         state.status = "failed";
+        state.weather = null;
         state.error = action.error.message;
       });
+    
   },
 });
 
