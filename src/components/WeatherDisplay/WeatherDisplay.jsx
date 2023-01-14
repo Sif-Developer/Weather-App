@@ -1,5 +1,5 @@
-import { WiDaySunny, WiNightClear, WiRain, WiSnow, WiWindy } from "react-icons/wi";
 import { useSelector } from "react-redux";
+import WeatherIcon from "./WeatherIcon/WeatherIcon";
 
 const WeatherDisplay = () => {
     const weather = useSelector((state) => state.weather.weather);
@@ -15,23 +15,9 @@ const WeatherDisplay = () => {
     }
 
     if (status === "succeeded" && weather) {
-        let icon;
-
-        if (weather.wind.speed > 10) {
-            icon = <WiWindy size={50} />;
-        } else if (weather.snow) {
-            icon = <WiSnow size={50} />;
-        } else if (weather.rain) {
-            icon = <WiRain size={50} />;
-        } else if (weather.weather[0].icon.endsWith("d")) {
-            icon = <WiDaySunny size={50} />;
-        } else {
-            icon = <WiNightClear size={50} />;
-        }
-
         return (
             <div>
-                {icon}
+                <WeatherIcon weather={weather} />
                 <p>Temperature: {weather.main.temp}</p>
                 <p>Pressure: {weather.main.pressure}</p>
                 <p>Humidity: {weather.main.humidity}</p>
@@ -43,6 +29,7 @@ const WeatherDisplay = () => {
 
     return null;
 };
+
 
 
 export default WeatherDisplay;
