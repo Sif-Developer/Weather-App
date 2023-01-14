@@ -10,17 +10,11 @@ const getWeather = async (city) => {
   return res.data;
 };
 
-const getSuggestions = async (city) => {
-  const res = await axios.get(
-    `${API_URL}/find?q=${city}&appid=${API_KEY}&units=metric`
-  );
-  return res.data.list;
-};
+
 
 
 const weatherService = {
   getWeather,
-  getSuggestions,
 };
 
 export default weatherService;

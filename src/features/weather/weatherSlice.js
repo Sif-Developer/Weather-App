@@ -15,13 +15,6 @@ export const getWeather = createAsyncThunk("weather/getWeather", async (city) =>
   }
 });
 
-export const getSuggestions = createAsyncThunk("weather/getSuggestions", async (city) => {
-  try {
-    return await weatherService.getSuggestions(city)
-  } catch (error) {
-    return error
-  }
-})
 
 
 export const weatherSlice = createSlice({
