@@ -20,10 +20,6 @@ const WeatherDisplay = () => {
   const dateFormated = date.toLocaleDateString('en-US', options);
 
 
-  const description = weather.weather[0].description;
-const capitalizedDescription = description.charAt(0).toUpperCase() + description.slice(1);
-
-
   if (status === "loading") {
     return <p>Loading...</p>;
   }
@@ -39,8 +35,9 @@ const capitalizedDescription = description.charAt(0).toUpperCase() + description
         {weather?.sys?.country && <p>Country Code: {weather.sys.country}</p>}
         
         {weather?.weather?.[0]?.description && (
-          <p>Weather: {capitalizedDescription}</p>
+          <p>Weather: {weather.weather[0].description.charAt(0).toUpperCase() + weather.weather[0].description.slice(1)}</p>
         )}
+
         {weather?.main?.pressure && <p>Pressure: {weather.main.pressure}</p>}
         {weather?.main?.humidity && <p>Humidity: {weather.main.humidity}</p>}
         {weather?.main?.temp && <p>Temperature: {weather.main.temp}</p>}
@@ -51,6 +48,7 @@ const capitalizedDescription = description.charAt(0).toUpperCase() + description
           <p>Max temperature: {weather.main.temp_max}</p>
         )}
         <p>Date: {dateFormated}</p>
+
         <WeatherClock weatherData={weather} />
       </div>
     );
