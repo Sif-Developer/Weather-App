@@ -16,6 +16,9 @@
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+
 }
 
 .bn632-hover:hover {
@@ -23,7 +26,9 @@
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+  transform: scale(1.2);
 }
+
 
 .bn632-hover:focus {
   outline: none;

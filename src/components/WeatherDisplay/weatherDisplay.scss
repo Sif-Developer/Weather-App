@@ -14,7 +14,12 @@
     width: 35vw;
     height: 35vw;
     font-family: 'Josefin Sans', sans-serif;
+    transform: scale(0.9);
+    transition: transform 0.5s ease-in-out;
 }
+.weather-display-container:hover{
+    transform: scale(1.1);
+  }
 
 .date-text{
     color: white;
@@ -30,5 +35,10 @@
     box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
     color: rgb(223, 215, 215);
     font-family: 'Josefin Sans', sans-serif;
+    transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+}
+.date-text:hover{
+  transform: scale(1.2);
 }
 

@@ -34,10 +34,10 @@ const WeatherDisplay = () => {
         <WeatherClock weatherData={weather} />
         </span>
 
+        <WeatherIcon weather={weather} />
         {weather?.name && weather?.sys?.country && <p> {weather.name},</p>}
         {weather?.sys?.country && <p> {weather.sys.country}</p>}
         {weather?.main?.temp && <p> {weather.main.temp}ºC</p>}
-        <WeatherIcon weather={weather} />
         
         {weather?.weather?.[0]?.description && (
           <p>Weather: {weather.weather[0].description.charAt(0).toUpperCase() + weather.weather[0].description.slice(1)}</p>
