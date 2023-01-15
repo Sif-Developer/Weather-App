@@ -15,7 +15,7 @@ const WeatherDisplay = () => {
   if (status === "failed" && !error.payload) {
     return <p>City not found</p>;
   }
-
+console.log(weather.weather)
   if (status === "succeeded" && weather?.main) {
     return (
       <div>
@@ -24,6 +24,7 @@ const WeatherDisplay = () => {
         {weather?.sys?.country && <p>Country Code: {weather.sys.country}</p>}
         {weather?.weather?.[0]?.description && (
           <p>Weather: {weather.weather[0].description}</p>
+          
         )}
         {weather?.main?.pressure && <p>Pressure: {weather.main.pressure}</p>}
         {weather?.main?.humidity && <p>Humidity: {weather.main.humidity}</p>}
