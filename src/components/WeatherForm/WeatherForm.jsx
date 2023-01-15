@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getWeather } from "../../features/weather/weatherSlice";
+import "./WeatherForm.css"
+import WeatherFormButton from "./WeatherFormButton/WeatherFormButton";
 
 const WeatherForm = () => {
   const [city, setCity] = useState("");
@@ -18,6 +20,7 @@ const WeatherForm = () => {
         <input type="text" value={city} onChange={(e) => setCity(e.target.value)} placeholder="city" /> 
       </label>
       <button type="submit">Get Weather</button>
+      <WeatherFormButton/>
     </form>
   );
 };
