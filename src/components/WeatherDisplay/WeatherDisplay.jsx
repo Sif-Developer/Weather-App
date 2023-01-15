@@ -44,6 +44,10 @@ console.log(weather.weather)
             day: "numeric",
           })}
         </p>
+        <p>Current time: {date.toLocaleTimeString("en-EN", {hour: "numeric", minute: "numeric", second: "numeric"})}</p>
+
+
+
         <p>Forecast for next 4 days:</p>
         {console.log(weather.daily)}
         <ul>
