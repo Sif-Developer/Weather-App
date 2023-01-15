@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import WeatherIcon from "./WeatherIcon/WeatherIcon";
 import "../WeatherDisplay/weatherDisplay.css";
+import WeatherClock from "./WeatherClock/WeatherClock";
 
 const WeatherDisplay = () => {
   const weather = useSelector((state) => state.weather.weather);
@@ -33,6 +34,8 @@ const WeatherDisplay = () => {
         {weather?.main?.temp_max && (
           <p>Max temperature: {weather.main.temp_max}</p>
         )}
+
+        <WeatherClock weatherData={weather} />
       </div>
     );
   }
