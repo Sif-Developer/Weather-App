@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import "./Weatherclock.css"
 
 const WeatherClock = (props) => {
   const weatherData = props.weatherData;
@@ -34,7 +34,7 @@ const WeatherClock = (props) => {
           {hours}:{minutes}:{seconds}
         </p>
       ) : (
-        <p>Loading time...</p>
+        <span class="loader"></span>
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 .bn632-hover {
   width: 160px;
-  font-size: 16px;
+  font-size: 25px;
   font-weight: 600;
   color: #fff;
   cursor: pointer;
@@ -9,7 +9,7 @@
   text-align: center;
   border: none;
   background-size: 300% 100%;
-  border-radius: 50px;
+  border-radius: 20px;
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
@@ -29,10 +29,11 @@
 .bn632-hover.bn20 {
   background-image: linear-gradient(
     to right,
-    #5572f1,
-    #643396,
-    #3567d2,
-    #6f19b5
+    #acacc6,
+    #1c0a45,
+    #615774,
+    #361d63
   );
-  box-shadow: 0 4px 15px 0 rgba(70, 49, 101, 0.75);
+  opacity: 0.5;
+  box-shadow: 10px 4px 25px  rgba(58, 54, 64, 0.75);
 }

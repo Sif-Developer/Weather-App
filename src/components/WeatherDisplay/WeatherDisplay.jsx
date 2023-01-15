@@ -1,8 +1,7 @@
 import { useSelector } from "react-redux";
 import WeatherIcon from "./WeatherIcon/WeatherIcon";
-import "../WeatherDisplay/weatherDisplay.css";
+import "../WeatherDisplay/weatherDisplay.scss";
 import WeatherClock from "./WeatherClock/WeatherClock";
-import { useEffect, useState } from "react";
 
 const WeatherDisplay = () => {
   const weather = useSelector((state) => state.weather.weather);
@@ -21,7 +20,7 @@ const WeatherDisplay = () => {
 
 
   if (status === "loading") {
-    return <p>Loading...</p>;
+    return <span class="loader"></span>
   }
 
   if (status === "failed" && !error.payload) {
@@ -29,27 +28,28 @@ const WeatherDisplay = () => {
   }
   if (status === "succeeded" && weather?.main) {
     return (
-      <div>
-        <WeatherIcon weather={weather} />
-        {weather?.name && weather?.sys?.country && <p>City: {weather.name}</p>}
-        {weather?.sys?.country && <p>Country Code: {weather.sys.country}</p>}
+      <div className="weather-display-container">
+        <p>{dateFormated}</p>
+        <WeatherClock weatherData={weather} />
+
+        {weather?.name && weather?.sys?.country && <p> {weather.name},</p>}
+        {weather?.sys?.country && <p> {weather.sys.country}</p>}
         
         {weather?.weather?.[0]?.description && (
           <p>Weather: {weather.weather[0].description.charAt(0).toUpperCase() + weather.weather[0].description.slice(1)}</p>
-        )}
+          )}
+        <WeatherIcon weather={weather} />
 
         {weather?.main?.pressure && <p>Pressure: {weather.main.pressure}</p>}
         {weather?.main?.humidity && <p>Humidity: {weather.main.humidity}</p>}
         {weather?.main?.temp && <p>Temperature: {weather.main.temp}</p>}
         {weather?.main?.temp_min && (
           <p>Min temperature: {weather.main.temp_min}</p>
-        )}
+          )}
         {weather?.main?.temp_max && (
           <p>Max temperature: {weather.main.temp_max}</p>
-        )}
-        <p>Date: {dateFormated}</p>
+          )}
 
-        <WeatherClock weatherData={weather} />
       </div>
     );
   }
