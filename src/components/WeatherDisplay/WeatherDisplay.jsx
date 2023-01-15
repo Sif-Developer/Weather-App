@@ -20,6 +20,10 @@ const WeatherDisplay = () => {
   const dateFormated = date.toLocaleDateString('en-US', options);
 
 
+  const description = weather.weather[0].description;
+const capitalizedDescription = description.charAt(0).toUpperCase() + description.slice(1);
+
+
   if (status === "loading") {
     return <p>Loading...</p>;
   }
@@ -35,7 +39,7 @@ const WeatherDisplay = () => {
         {weather?.sys?.country && <p>Country Code: {weather.sys.country}</p>}
         
         {weather?.weather?.[0]?.description && (
-          <p>Weather: {weather.weather[0].description}</p>
+          <p>Weather: {capitalizedDescription}</p>
         )}
         {weather?.main?.pressure && <p>Pressure: {weather.main.pressure}</p>}
         {weather?.main?.humidity && <p>Humidity: {weather.main.humidity}</p>}
