@@ -2,11 +2,23 @@ import { useSelector } from "react-redux";
 import WeatherIcon from "./WeatherIcon/WeatherIcon";
 import "../WeatherDisplay/weatherDisplay.css";
 import WeatherClock from "./WeatherClock/WeatherClock";
+import { useEffect, useState } from "react";
 
 const WeatherDisplay = () => {
   const weather = useSelector((state) => state.weather.weather);
   const status = useSelector((state) => state.weather.status);
   const error = useSelector((state) => state.weather.error);
+
+  const options = {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  };
+
+  const date = new Date();
+  const dateFormated = date.toLocaleDateString('en-US', options);
+
 
   if (status === "loading") {
     return <p>Loading...</p>;
@@ -15,13 +27,13 @@ const WeatherDisplay = () => {
   if (status === "failed" && !error.payload) {
     return <p>City not found</p>;
   }
-  // console.log(weather.weather);
   if (status === "succeeded" && weather?.main) {
     return (
       <div>
         <WeatherIcon weather={weather} />
         {weather?.name && weather?.sys?.country && <p>City: {weather.name}</p>}
         {weather?.sys?.country && <p>Country Code: {weather.sys.country}</p>}
+        
         {weather?.weather?.[0]?.description && (
           <p>Weather: {weather.weather[0].description}</p>
         )}
@@ -34,7 +46,7 @@ const WeatherDisplay = () => {
         {weather?.main?.temp_max && (
           <p>Max temperature: {weather.main.temp_max}</p>
         )}
-
+        <p>Date: {dateFormated}</p>
         <WeatherClock weatherData={weather} />
       </div>
     );
