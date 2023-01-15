@@ -10,6 +10,7 @@ import {
   faWind,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./WeatherIcon.css"
 
 const WeatherIcon = ({ weather }) => {
   let icon;

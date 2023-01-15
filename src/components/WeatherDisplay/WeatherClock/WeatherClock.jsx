@@ -30,7 +30,7 @@ const WeatherClock = (props) => {
   return (
     <div>
       {localTime ? (
-        <p>
+        <p className="time-class">
           {hours}:{minutes}:{seconds}
         </p>
       ) : (

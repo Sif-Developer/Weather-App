@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Raleway:wght@100&display=swap');
 $white: rgba(106, 101, 120, 0.3);
 
 body {
-  background: linear-gradient(45deg, #1b1528, #03040ab9);
+  background: linear-gradient(45deg, #1b1528, #121838b9);
   height: 100vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .container {
@@ -13,6 +14,7 @@ body {
   left: 25%;
   display: flex;
   justify-content: center;
+  
 }
 
 form {
@@ -67,13 +69,12 @@ form {
     backdrop-filter: blur(5px);
     box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
     color: rgb(226, 226, 226);
-    font-family: Montserrat, sans-serif;
     font-weight: 500;
     font-size: 20px;
     transition: all 0.2s ease-in-out;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     margin: auto;
-    
+    font-family: 'Josefin Sans', sans-serif;
     
     &:hover {
       background: rgba(255,255,255,0.1);
@@ -110,7 +111,6 @@ form {
 }
 
 ::placeholder {
-  font-family: Montserrat, sans-serif;
   font-weight: 400;
   font-size:medium;
   color: rgb(255, 255, 255);

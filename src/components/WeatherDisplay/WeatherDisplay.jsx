@@ -29,26 +29,29 @@ const WeatherDisplay = () => {
   if (status === "succeeded" && weather?.main) {
     return (
       <div className="weather-display-container">
-        <p>{dateFormated}</p>
+        <span>
+        <p className="date-text" >{dateFormated}</p>
         <WeatherClock weatherData={weather} />
+        </span>
 
         {weather?.name && weather?.sys?.country && <p> {weather.name},</p>}
         {weather?.sys?.country && <p> {weather.sys.country}</p>}
+        {weather?.main?.temp && <p> {weather.main.temp}ºC</p>}
+        <WeatherIcon weather={weather} />
         
         {weather?.weather?.[0]?.description && (
           <p>Weather: {weather.weather[0].description.charAt(0).toUpperCase() + weather.weather[0].description.slice(1)}</p>
           )}
-        <WeatherIcon weather={weather} />
 
-        {weather?.main?.pressure && <p>Pressure: {weather.main.pressure}</p>}
-        {weather?.main?.humidity && <p>Humidity: {weather.main.humidity}</p>}
-        {weather?.main?.temp && <p>Temperature: {weather.main.temp}</p>}
         {weather?.main?.temp_min && (
           <p>Min temperature: {weather.main.temp_min}</p>
           )}
         {weather?.main?.temp_max && (
           <p>Max temperature: {weather.main.temp_max}</p>
           )}
+
+        {weather?.main?.pressure && <p>Pressure: {weather.main.pressure}</p>}
+        {weather?.main?.humidity && <p>Humidity: {weather.main.humidity}</p>}
 
       </div>
     );
