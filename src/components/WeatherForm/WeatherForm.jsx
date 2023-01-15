@@ -15,7 +15,7 @@ const WeatherForm = () => {
     <form onSubmit={handleSubmit}>
       <label>
         City:
-        <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
+        <input type="text" value={city} onChange={(e) => setCity(e.target.value)} placeholder="city" /> 
       </label>
       <button type="submit">Get Weather</button>
     </form>

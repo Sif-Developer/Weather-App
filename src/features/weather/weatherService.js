@@ -7,7 +7,7 @@ const getWeather = async (city) => {
   const res = await axios.get(
     `${API_URL}/weather?q=${city}&appid=${API_KEY}&units=metric`
   );
-  return res.data;
+  return res.data ;
 };
 
 

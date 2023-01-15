@@ -3,7 +3,6 @@ import {
   faCloudSun,
   faCloudSunRain,
   faCloudMoonRain,
-  faFog,
   faRainbow,
   faCloudMoon,
   faSnowflake,
