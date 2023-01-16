@@ -56,10 +56,10 @@ const WeatherDisplay = () => {
         <div className="temperature-box">{weather?.main?.temp && <p> {weather.main.temp}ºC</p>}</div>
                   <div className="min-max-temperature-box">
         {weather?.main?.temp_min && (
-          <p className="min-tempearure"> <img src={minTemp} className="min-temp-icon"/>  Min temperature: {weather.main.temp_min}ºC</p>
+          <p className="min-tempearure"> <img src={minTemp} className="min-temp-icon"/>Min: {weather.main.temp_min}ºC</p>
         )}
         {weather?.main?.temp_max && (
-          <p className="max-temperature"><img src={maxTemp} className="max-temp-icon"/>  Max temperature: {weather.main.temp_max}ºC</p>
+          <p className="max-temperature"><img src={maxTemp} className="max-temp-icon"/>Max: {weather.main.temp_max}ºC</p>
         )}
           </div>
 

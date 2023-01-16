@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Raleway:wght@100&display=swap");
 
 .weather-display-container {
-  background-color: rgba(92, 88, 105, 0.3);
-  margin-left: 55%;
+  background-color: rgba(106, 102, 120, 0.3);
+  margin-left: 50%;
   margin-top: 5%;
   border-radius: 20px;
   padding: 3em;
@@ -10,32 +10,33 @@
   backdrop-filter: blur(10px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 35vw;
-  height: 35vw;
+  width: 30vw;
+  height: 30vw;
   font-family: "Josefin Sans", sans-serif;
-  transform: scale(0.9);
+
   transition: transform 0.5s ease-in-out;
-}
-.weather-display-container:hover {
-  transform: scale(0.95);
+  animation: moveLeft 15s linear infinite;
+ 
 }
 
+
 .date-text {
-  color: white;
   margin-right: 70%;
   font-size: x-large;
-  width: 25vw;
+  width: 21vw;
   height: 5vw;
   background-color: rgba(119, 114, 135, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 50px;
+  border-radius: 10px;
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   color: rgb(223, 215, 215);
   font-family: "Josefin Sans", sans-serif;
+  animation: moveLeft 10s linear infinite;
   transform: scale(1);
   transition: transform 0.5s ease-in-out;
+
 }
 .date-text:hover {
   transform: scale(1.1);
@@ -57,24 +58,23 @@
 }
 
 .weather-description-box {
-  color: white;
   font-size: large;
-  width: 9vw;
+  width: 13vw;
   height: 3vw;
   background-color: rgba(119, 114, 135, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 20px;
-  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.7);
   color: rgb(223, 215, 215);
   font-family: "Josefin Sans", sans-serif;
   float: right;
   position: relative;
-  top: -8px;
-  right: -50px;
+  top: -5px;
+  right: -10px;
   font-size: 20px;
-  box-shadow: -1px -5px 15px -5px rgba(0, 0, 0, 0.75);
+  
   transform: scale(1);
   transition: transform 2s ease-in-out,
     font-size 1s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -103,22 +103,21 @@
 .location-box {
   color: white;
   font-size: large;
-  width: 7vw;
+  width: 10vw;
   height: 3vw;
   background-color: rgba(119, 114, 135, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 20px;
-  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.6);
   color: rgb(223, 215, 215);
   font-family: "Josefin Sans", sans-serif;
   float: right;
   position: relative;
-  top: -55px;
-  right: -70px;
+  top: -10px;
+  right: -10px;
   font-size: 20px;
-  box-shadow: -1px -5px 15px -5px rgba(0, 0, 0, 0.75);
   transform: scale(1);
   transition: transform 2s ease-in-out,
     font-size 1s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -146,52 +145,55 @@
 
 .temperature-box {
   width: 20vw;
-  height: 20vw;
-  background-color: rgba(119, 114, 135, 0.3);
+  height: 12vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 20px;
-  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.4);
   color: rgb(223, 215, 215);
   font-family: "Josefin Sans", sans-serif;
   float: right;
   position: relative;
-  top: -400px;
-  right: 5px;
+  top: -29rem;
+  right: -3rem;
   font-size: 5rem;
   animation: moveRight 10s linear infinite;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .min-max-temperature-box{
-  width: 18rem;
+  width: 15rem;
   height: 15rem;
-  background-color: rgba(119, 114, 135, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: 20px 20px 40px -6px rgba(0, 0.4, 0.4, 0.5);
   color: rgb(223, 215, 215);
   font-family: "Josefin Sans", sans-serif;
   float: right;
   position: relative;
-  top: -28rem;
-  right: 0.9rem;
+  top: -27.5rem;
+  right: -1rem;
   font-size: 1.4rem;
-  animation: moveRight 10s linear infinite;
+  animation: moveLeft 10s linear infinite;
+  margin-top: -45px;
+
 }
 
 .max-temp-icon{
   width: 4rem;
   height: 4rem;
   position: relative;
-  top: 2.5rem
+  top: 1.5rem
 }
 
 .min-temp-icon{
   width: 4rem;
   height: 4rem;
   position: relative;
-  top: 2.5rem
+  top: 1.5rem
 }
