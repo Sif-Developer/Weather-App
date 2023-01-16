@@ -27,11 +27,16 @@ const WeatherClock = (props) => {
     return () => clearInterval(intervalId);
   }, [seconds, minutes]);
 
+  function addZero(num) {
+    return num < 10 ? "0" + num : num;
+  }
+  
+
   return (
     <div>
       {localTime ? (
         <p className="time-class">
-          {hours}:{minutes}:{seconds}
+           {addZero(hours)}:{addZero(minutes)}:{addZero(seconds)}
         </p>
       ) : (
         <span class="loader"></span>

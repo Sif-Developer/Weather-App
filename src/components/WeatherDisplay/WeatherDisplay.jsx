@@ -9,18 +9,17 @@ const WeatherDisplay = () => {
   const error = useSelector((state) => state.weather.error);
 
   const options = {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
   };
 
   const date = new Date();
-  const dateFormated = date.toLocaleDateString('en-US', options);
-
+  const dateFormated = date.toLocaleDateString("en-US", options);
 
   if (status === "loading") {
-    return <span class="loader"></span>
+    return <span class="loader"></span>;
   }
 
   if (status === "failed" && !error.payload) {
@@ -30,29 +29,35 @@ const WeatherDisplay = () => {
     return (
       <div className="weather-display-container">
         <span>
-        <p className="date-text" >{dateFormated}</p>
-        <WeatherClock weatherData={weather} />
+          <p className="date-text">{dateFormated}</p>
+          <WeatherClock weatherData={weather} />
         </span>
 
-        <WeatherIcon weather={weather} />
-        {weather?.name && weather?.sys?.country && <p> {weather.name},</p>}
-        {weather?.sys?.country && <p> {weather.sys.country}</p>}
-        {weather?.main?.temp && <p> {weather.main.temp}ºC</p>}
-        
-        {weather?.weather?.[0]?.description && (
-          <p>Weather: {weather.weather[0].description.charAt(0).toUpperCase() + weather.weather[0].description.slice(1)}</p>
-          )}
+        <div className="weather-theme">
+  <WeatherIcon weather={weather} />
+  <div className="text-container">
+    {weather?.weather?.[0]?.description && (
+      <p className="weather-description-box">
+        {weather.weather[0].description.charAt(0).toUpperCase() +
+          weather.weather[0].description.slice(1)}
+      </p>
+    )}
+    <p>{weather?.name}, {weather?.sys?.country}</p>
+  </div>
+</div>
 
+        {weather?.main?.temp && <p> {weather.main.temp}ºC</p>}
+
+     
         {weather?.main?.temp_min && (
           <p>Min temperature: {weather.main.temp_min}</p>
-          )}
+        )}
         {weather?.main?.temp_max && (
           <p>Max temperature: {weather.main.temp_max}</p>
-          )}
+        )}
 
         {weather?.main?.pressure && <p>Pressure: {weather.main.pressure}</p>}
         {weather?.main?.humidity && <p>Humidity: {weather.main.humidity}</p>}
-
       </div>
     );
   }
