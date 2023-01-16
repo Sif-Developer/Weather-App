@@ -128,3 +128,4 @@ const WeatherIcon = ({ weather }) => {
 };
 
 export default WeatherIcon;
+
