@@ -1,8 +1,10 @@
 # 💻 CITY WEATHER APP
 
 ## 🔧 Built with....
-- React(Redux) - a client-side JavaScript framework
+- React(Redux) 
+- SASS
 - OpenWeatherMap - https://openweathermap.org/api
+
 ## 🚀 Getting Started - Installation
 
 1. To deploy this project you must clone the  repository through the following link:
