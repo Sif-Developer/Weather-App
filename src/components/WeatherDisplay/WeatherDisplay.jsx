@@ -34,21 +34,21 @@ const WeatherDisplay = () => {
         </span>
 
         <div className="weather-theme">
-  <WeatherIcon weather={weather} />
-  <div className="text-container">
-    {weather?.weather?.[0]?.description && (
-      <p className="weather-description-box">
-        {weather.weather[0].description.charAt(0).toUpperCase() +
-          weather.weather[0].description.slice(1)}
-      </p>
-    )}
-    <p>{weather?.name}, {weather?.sys?.country}</p>
-  </div>
-</div>
+          <WeatherIcon weather={weather} />
+          <div className="text-container">
+            {weather?.weather?.[0]?.description && (
+              <p className="weather-description-box">
+                {weather.weather[0].description.charAt(0).toUpperCase() +
+                  weather.weather[0].description.slice(1)}
+              </p>
+            )}
+            <p className="location-box">
+              {weather?.name}, {weather?.sys?.country}
+            </p>
+          </div>
+        </div>
+        <div className="temperature-box">{weather?.main?.temp && <p> {weather.main.temp}ºC</p>}</div>
 
-        {weather?.main?.temp && <p> {weather.main.temp}ºC</p>}
-
-     
         {weather?.main?.temp_min && (
           <p>Min temperature: {weather.main.temp_min}</p>
         )}
