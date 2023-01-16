@@ -1,56 +1,36 @@
-
-.rain-icon {
-    color: blue;
-}
-
-.cloud-rain-icon {
-    color: grey;
-}
-.heavy-rain-icon {
-    color: darkblue;
-}
-.snow-icon {
-    color: white;
-}
-.fog-icon {
-    color: lightgray;
-}
-.mist-icon {
-    color: lightgray;
-}
-.smoke-icon {
-    color: lightgray;
-}
-.haze-icon {
-    color: lightgray;
-}
-.sand-icon {
-    color: sandybrown;
-}
-.dust-icon {
-    color: lightgray;
-}
-.ash-icon {
-    color: gray;
-}
-.squall-icon {
-    color: purple;
-}
-.tornado-icon {
-    color: red;
-}
-.clear-sky-icon {
-    color: yellow;
-}
-.few-clouds-icon {
-    color: lightgray;
-}
-.scattered-clouds-icon {
-    color: gray;
-}
-.broken-clouds-icon {
-    color: darkgray;
-}
-.overcast-clouds-icon {
-    color: black;
-}
+.icon-class {
+    width: 40%;
+    height: 40%;
+    margin-right: 40%;
+    margin-top: 5%;
+    animation: rotate 6s linear infinite;
+    animation-fill-mode: forwards;
+    transition: transform 0.7s ease;
+    transform: scale(1);
+  }
+  .icon-class:hover {
+    transform: scale(1.2);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
