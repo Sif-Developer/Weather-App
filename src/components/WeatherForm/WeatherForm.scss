@@ -28,6 +28,7 @@ form {
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
+  top: -10px;
   transition: all 0.2s ease-in-out;
   animation: moveUpAndDown 15s ease-in-out infinite;
 
@@ -39,6 +40,8 @@ form {
     margin-top: 0;
     margin-bottom: 60px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+  top: -10px;
   }
 
   a {
@@ -59,7 +62,6 @@ form {
     background: transparent;
     width: 300px;
     padding: 1em;
-    margin-bottom: 2em;
     border: none;
     border-left: 1px solid $white;
     border-top: 1px solid $white;
@@ -71,9 +73,12 @@ form {
     font-weight: 500;
     font-size: 20px;
     transition: all 0.2s ease-in-out;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     margin: auto;
     font-family: "Josefin Sans", sans-serif;
+    animation: moveUpAndDown 30s ease-in-out infinite;
+    position: relative;
+  top: -10px;
 
     &:hover {
       background: rgba(255, 255, 255, 0.1);
@@ -111,7 +116,7 @@ form {
 ::placeholder {
   font-weight: 400;
   font-size: medium;
-  color: rgb(255, 255, 255);
+  color: rgb(199, 196, 196);
   text-shadow: 1px 3px 4px rgba(0, 0, 0, 1);
 }
 
