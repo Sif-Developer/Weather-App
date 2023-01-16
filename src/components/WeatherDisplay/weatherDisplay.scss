@@ -1,44 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Raleway:wght@100&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Raleway:wght@100&display=swap');
-
-.weather-display-container{
-    background-color: rgba(92, 88, 105, 0.3);;
-    margin-left: 55%;
-    margin-top: 5%;
-    border-radius: 20px;
-    padding: 3em;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
-    text-align: center;
-    width: 35vw;
-    height: 35vw;
-    font-family: 'Josefin Sans', sans-serif;
-    transform: scale(0.9);
-    transition: transform 0.5s ease-in-out;
-}
-.weather-display-container:hover{
-    transform: scale(0.95);
-  }
-
-.date-text{
-    color: white;
-    margin-right: 70%;
-    font-size: x-large;
-    width: 25vw;
-    height: 5vw;
-    background-color: rgba(119, 114, 135, 0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 50px;
-    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
-    color: rgb(223, 215, 215);
-    font-family: 'Josefin Sans', sans-serif;
-    transform: scale(1);
+.weather-display-container {
+  background-color: rgba(92, 88, 105, 0.3);
+  margin-left: 55%;
+  margin-top: 5%;
+  border-radius: 20px;
+  padding: 3em;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 35vw;
+  height: 35vw;
+  font-family: "Josefin Sans", sans-serif;
+  transform: scale(0.9);
   transition: transform 0.5s ease-in-out;
 }
-.date-text:hover{
+.weather-display-container:hover {
+  transform: scale(0.95);
+}
+
+.date-text {
+  color: white;
+  margin-right: 70%;
+  font-size: x-large;
+  width: 25vw;
+  height: 5vw;
+  background-color: rgba(119, 114, 135, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 50px;
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  color: rgb(223, 215, 215);
+  font-family: "Josefin Sans", sans-serif;
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+}
+.date-text:hover {
   transform: scale(1.1);
 }
 
@@ -59,93 +58,93 @@
 
 .weather-description-box {
   color: white;
-    font-size: large;
-    width: 9vw;
-    height: 3vw;
-    background-color: rgba(119, 114, 135, 0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 20px;
-    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
-    color: rgb(223, 215, 215);
-    font-family: 'Josefin Sans', sans-serif;
-    float: right;
-    position: relative;
-    top: -8px;
-    right: -50px;
-    font-size: 20px;
-    box-shadow: -1px -5px 15px -5px rgba(0,0,0,0.75);
-    transform: scale(1);
-    transition: transform 2s ease-in-out, font-size 1s cubic-bezier(0.25, 0.1, 0.25, 1);
-    animation: moveRight 10s linear infinite;
+  font-size: large;
+  width: 9vw;
+  height: 3vw;
+  background-color: rgba(119, 114, 135, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  color: rgb(223, 215, 215);
+  font-family: "Josefin Sans", sans-serif;
+  float: right;
+  position: relative;
+  top: -8px;
+  right: -50px;
+  font-size: 20px;
+  box-shadow: -1px -5px 15px -5px rgba(0, 0, 0, 0.75);
+  transform: scale(1);
+  transition: transform 2s ease-in-out,
+    font-size 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation: moveRight 10s linear infinite;
 }
-.weather-description-box:hover{
-    transform: scale(1.1);
-    font-size: xx-large;
+.weather-description-box:hover {
+  transform: scale(1.1);
+  font-size: xx-large;
+}
+
+@keyframes moveRight {
+  from {
+    transform: translateX(0);
   }
-
-  @keyframes moveRight {
-    from {
+  to {
+    transform: translateX(10%);
+  }
+  20% {
+    transform: translateX(10%);
+  }
+  100% {
     transform: translateX(0);
-    }
-    to {
-    transform: translateX(30%);
-    }
-    20% {
-    transform: translateX(30%);
-    }
-    100% {
-    transform: translateX(0);
-    }
-    }
-
-
-.location-box{
-  color: white;
-    font-size: large;
-    width: 7vw;
-    height: 3vw;
-    background-color: rgba(119, 114, 135, 0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 20px;
-    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
-    color: rgb(223, 215, 215);
-    font-family: 'Josefin Sans', sans-serif;
-    float: right;
-    position: relative;
-    top: -55px;
-  right: -70px;
-    font-size: 20px;
-    box-shadow: -1px -5px 15px -5px rgba(0,0,0,0.75);
-    transform: scale(1);
-    transition: transform 2s ease-in-out, font-size 1s cubic-bezier(0.25, 0.1, 0.25, 1);
-    animation: moveLeft 10s linear infinite;
+  }
 }
-.location-box:hover{
-    transform: scale(1);
-    font-size: 25px;
-  
+
+.location-box {
+  color: white;
+  font-size: large;
+  width: 7vw;
+  height: 3vw;
+  background-color: rgba(119, 114, 135, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  color: rgb(223, 215, 215);
+  font-family: "Josefin Sans", sans-serif;
+  float: right;
+  position: relative;
+  top: -55px;
+  right: -70px;
+  font-size: 20px;
+  box-shadow: -1px -5px 15px -5px rgba(0, 0, 0, 0.75);
+  transform: scale(1);
+  transition: transform 2s ease-in-out,
+    font-size 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation: moveLeft 10s linear infinite;
+}
+.location-box:hover {
+  transform: scale(1);
+  font-size: 25px;
 }
 
 @keyframes moveLeft {
   from {
-  transform: translateX(0);
+    transform: translateX(0);
   }
   to {
-  transform: translateX(-30%);
+    transform: translateX(-20%);
   }
   20% {
-  transform: translateX(-30%);
+    transform: translateX(-20%);
   }
   100% {
-  transform: translateX(0);
+    transform: translateX(0);
   }
-  }
+}
 
-.temperature-box{
+.temperature-box {
   width: 20vw;
   height: 20vw;
   background-color: rgba(119, 114, 135, 0.3);
@@ -153,13 +152,30 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 20px;
-  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   color: rgb(223, 215, 215);
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   float: right;
   position: relative;
-  top: -450px;
-right: 15px;
+  top: -400px;
+  right: 5px;
   font-size: 100px;
-  }
-  
+}
+
+.min-max-temperature-box{
+  width: 15vw;
+  height: 10vw;
+  background-color: rgba(119, 114, 135, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  color: rgb(223, 215, 215);
+  font-family: "Josefin Sans", sans-serif;
+  float: right;
+  position: relative;
+  top: -5px;
+  right: 5px;
+  font-size: 20px;
+}

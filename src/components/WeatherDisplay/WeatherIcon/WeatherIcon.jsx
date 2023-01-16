@@ -1,17 +1,18 @@
-import {
-  faSun,
-  faCloudSun,
-  faCloudSunRain,
-  faCloudMoonRain,
-  faRainbow,
-  faCloudMoon,
-  faSnowflake,
-  faSmog,
-  faWind,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "./WeatherIcon.css";
 import sunny from '../../../assets/weatherIcons/3d weather icons/sun/26.png';
+import fewClouds from "../../../assets/weatherIcons/3d weather icons/cloud/35.png"
+import sunnyRainbow from "../../../assets/weatherIcons/3d weather icons/sun/6.png"
+import sunCloudRain from "../../../assets/weatherIcons/3d weather icons/sun/8.png"
+import sunCloudRainFun from "../../../assets/weatherIcons/3d weather icons/sun/13.png"
+import snowFlake from "../../../assets/weatherIcons/3d weather icons/snow/36.png"
+import fog from "../../../assets/weatherIcons/3d weather icons/cloud/33.png"
+import mist from "../../../assets/weatherIcons/3d weather icons/cloud/32.png"
+import cloudsMoving from "../../../assets/weatherIcons/3d weather icons/sun/4.png"
+import cloudsSun from "../../../assets/weatherIcons/3d weather icons/sun/27.png"
+import overcastClouds from "../../../assets/weatherIcons/3d weather icons/cloud/7.png"
+import cloudMoon from "../../../assets/weatherIcons/3d weather icons/moon/31.png"
+
 
 const WeatherIcon = ({ weather }) => {
   let icon = null;
@@ -22,139 +23,103 @@ const WeatherIcon = ({ weather }) => {
   let iconClass = "";
   if (id >= 200 && id <= 232) {
     icon = (
-      <FontAwesomeIcon
-        icon={faRainbow}
-        size="10x"
-      />
+      <img src={sunnyRainbow} alt="Sunny weather icon" className="icon-class-2" 
+        />
     );
   } else if (id >= 300 && id <= 321) {
     icon = (
-      <FontAwesomeIcon
-        icon={faCloudSunRain}
-        size="10x"
+      <img src={sunCloudRain} alt="Sunny weather icon" className="icon-class-2" 
       />
     );
   } else if (id >= 500 && id <= 531) {
     icon = (
-      <FontAwesomeIcon
-        icon={faCloudSunRain}
-        size="10x"
+      <img src={sunCloudRainFun} alt="Sunny weather icon" className="icon-class-2" 
       />
     );
   } else if (id >= 600 && id <= 622) {
     icon = (
-      <FontAwesomeIcon
-        icon={faSnowflake}
-        size="10x"
+      <img src={snowFlake} alt="Sunny weather icon" className="icon-class-2" 
       />
     );
   } else if (id >= 700 && id <= 781) {
     if (lowercaseDescription.includes("fog")) {
       icon = (
-        <FontAwesomeIcon
-          icon={faSmog}
-          size="10x"
-        />
+        <img src={fog} alt="Sunny weather icon" className="icon-class-2" 
+      />
       );
     } else if (lowercaseDescription.includes("mist")) {
       icon = (
-        <FontAwesomeIcon
-          icon={faSmog}
-          size="10x"
-        />
+        <img src={mist} alt="Sunny weather icon" className="icon-class-2" 
+      />
       );
     } else if (lowercaseDescription.includes("smoke")) {
       icon = (
-        <FontAwesomeIcon
-          icon={faSmog}
-          size="10x"
+        <img src={mist} alt="Sunny weather icon" className="icon-class-2" 
         />
       );
     } else if (lowercaseDescription.includes("haze")) {
       icon = (
-        <FontAwesomeIcon
-          icon={faSmog}
-          size="10x"
+        <img src={mist} alt="Sunny weather icon" className="icon-class-2" 
         />
       );
     } else if (lowercaseDescription.includes("sand")) {
       icon = (
-        <FontAwesomeIcon
-          icon={faSmog}
-          size="10x"
+        <img src={mist} alt="Sunny weather icon" className="icon-class-2" 
         />
       );
     } else if (lowercaseDescription.includes("dust")) {
       icon = (
-        <FontAwesomeIcon
-          icon={faSmog}
-          size="10x"
+        <img src={mist} alt="Sunny weather icon" className="icon-class-2" 
         />
       );
     } else if (lowercaseDescription.includes("ash")) {
       icon = (
-        <FontAwesomeIcon
-          icon={faSmog}
-          size="10x"
+        <img src={mist} alt="Sunny weather icon" className="icon-class-2" 
         />
       );
     } else if (lowercaseDescription.includes("squall")) {
       icon = (
-        <FontAwesomeIcon
-          icon={faRainbow}
-          size="10x"
+        <img src={mist} alt="Sunny weather icon" className="icon-class-2" 
         />
       );
     } else if (lowercaseDescription.includes("tornado")) {
       icon = (
-        <FontAwesomeIcon
-          icon={faWind}
-          size="10x"
+        <img src={mist} alt="Sunny weather icon" className="icon-class-2" 
         />
       );
     }
   } else if (id === 800) {
     if (lowercaseDescription.includes("clear sky")) {
       icon = (
-        <img src={sunny} alt="Sunny weather icon" className="icon-class" />
+        <img src={sunny} alt="Sunny weather icon" className="icon-class-2" />
       );
     }
   } else if (id >= 801 && id <= 8010) {
     if (lowercaseDescription.includes("few clouds")) {
       icon = (
-        <FontAwesomeIcon
-          icon={faCloudSun}
-          size="10x"
+        <img src={fewClouds} alt="Sunny weather icon" className="icon-class-2" 
         />
       );
     } else if (lowercaseDescription.includes("scattered clouds")) {
       icon = (
-        <FontAwesomeIcon
-          icon={faCloudSun}
-          size="10x"
+        <img src={cloudsMoving} alt="Sunny weather icon" className="icon-class-2" 
         />
       );
     } else if (lowercaseDescription.includes("broken clouds")) {
       icon = (
-        <FontAwesomeIcon
-          icon={faCloudSun}
-          size="10x"
+        <img src={cloudsSun} alt="Sunny weather icon" className="icon-class-2" 
         />
       );
     } else if (lowercaseDescription.includes("overcast clouds")) {
       icon = (
-        <FontAwesomeIcon
-          icon={faCloudMoonRain}
-          size="10x"
+        <img src={overcastClouds} alt="Sunny weather icon" className="icon-class-2" 
         />
       );
     }
   } else {
     icon = (
-      <FontAwesomeIcon
-        icon={faCloudMoon}
-        size="10x"
-      />
+      <img src={cloudMoon} alt="Sunny weather icon" className="icon-class-2" 
+        />
     );
   }
 

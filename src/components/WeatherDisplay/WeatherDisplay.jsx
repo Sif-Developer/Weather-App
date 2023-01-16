@@ -2,7 +2,9 @@ import { useSelector } from "react-redux";
 import WeatherIcon from "./WeatherIcon/WeatherIcon";
 import "../WeatherDisplay/weatherDisplay.scss";
 import WeatherClock from "./WeatherClock/WeatherClock";
-
+import {
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const WeatherDisplay = () => {
   const weather = useSelector((state) => state.weather.weather);
   const status = useSelector((state) => state.weather.status);
@@ -48,16 +50,15 @@ const WeatherDisplay = () => {
           </div>
         </div>
         <div className="temperature-box">{weather?.main?.temp && <p> {weather.main.temp}ºC</p>}</div>
-
+                  <div className="min-max-temperature-box">
         {weather?.main?.temp_min && (
-          <p>Min temperature: {weather.main.temp_min}</p>
+          <p className="min-tempearure"> <FontAwesomeIcon icon="fa-duotone fa-temperature-arrow-down" />  Min temperature: {weather.main.temp_min}</p>
         )}
         {weather?.main?.temp_max && (
-          <p>Max temperature: {weather.main.temp_max}</p>
+          <p className="max-temperature">Max temperature: {weather.main.temp_max}</p>
         )}
+          </div>
 
-        {weather?.main?.pressure && <p>Pressure: {weather.main.pressure}</p>}
-        {weather?.main?.humidity && <p>Humidity: {weather.main.humidity}</p>}
       </div>
     );
   }

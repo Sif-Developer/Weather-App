@@ -22,15 +22,17 @@
     }
   }
   
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1);
-    }
+  .icon-class-2 {
+    width: 40%;
+    height: 40%;
+    margin-right: 40%;
+    margin-top: 5%;
+    
+    animation-fill-mode: forwards;
+    transition: transform 0.7s ease;
+    transform: scale(1);
+    animation: moveUpAndDown 4s ease-in-out infinite;
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
   }
   
